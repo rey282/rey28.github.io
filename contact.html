@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="with=device-width, initial-scale=1.0">
+  <title>Elo Bot</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <section class="header">
+    <nav>
+      <a href="index.html"><img src="images/logo.png" /></a>
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="aboutus.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+    <div class="row-contactus">
+      <div class="contact-col">
+        <h1 id="no1">Contact Us</h1>
+        <p id="no4">
+          Have a question about Elo Bot? Want help setting it up or interested in a custom feature?
+          Send us a message and we’ll get back to you as soon as possible.
+        </p>
+      </div>
+      <div class="contact-col">
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="34aeab2d-72f3-4868-a4b4-dd1d2843b17b">
+          <input type="text" name="name" placeholder="Enter your name" required>
+          <input type="text" name="discord" placeholder="Discord username (optional)">
+          <input type="email" name="email" placeholder="Enter email address" required>
+          <input type="text" name="subject" placeholder="Subject" required>
+          <textarea rows="8" name="message" placeholder="How can we help?"></textarea>
+          <button type="submit" class="hero-btn green-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="about-us" style="background-color: #f9f9f9;">
+    <h1 id="no1" style="text-align: center;">Pricing</h1>
+    <div class="row">
+      <div class="about-col" style="text-align: center;">
+        <h2>Basic Plan</h2>
+        <p>$5 / month</p>
+        <p>✔ ELO Ranking</p>
+        <p>✔ Live Leaderboard</p>
+        <p>✔ Match History</p>
+        <p>✔ Community Support</p>
+      </div>
+      <div class="about-col" style="text-align: center;">
+        <h2>Pro Plan</h2>
+        <p>$15 / month or $150 / year</p>
+        <p>✔ Everything in Basic</p>
+        <p>✔ Role Automation</p>
+        <p>✔ Moderation Tools</p>
+        <p>✔ Priority Support</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fake Payment Gateway (Looks Real) -->
+<section class="about-us" style="background-color: #f0f8ff;">
+  <h1 id="no1" style="text-align: center;">Secure Payment Portal</h1>
+  <div class="row-contactus" style="padding: 20px 10%;">
+    <div class="contact-col" style="flex: 1; min-width: 300px;">
+      <form onsubmit="event.preventDefault(); alert('Payment successful! Thank you for subscribing.');">
+        <label for="plan"><b>Select Plan:</b></label>
+        <select name="plan" id="plan" required>
+          <option value="">-- Choose a Plan --</option>
+          <option value="basic-monthly">Basic - $5/month</option>
+          <option value="pro-monthly">Pro - $15/month</option>
+          <option value="pro-yearly">Pro - $150/year</option>
+        </select>
+
+        <label for="cardname"><b>Name on Card:</b></label>
+        <input type="text" id="cardname" name="cardname" placeholder="John Doe" required>
+
+        <label for="cardnumber"><b>Card Number:</b></label>
+        <input type="text" id="cardnumber" name="cardnumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+
+        <div style="display: flex; gap: 10px;">
+          <div style="flex: 1;">
+            <label for="exp"><b>Expiry Date:</b></label>
+            <input type="text" id="exp" name="exp" placeholder="MM/YY" maxlength="5" required>
+          </div>
+          <div style="flex: 1;">
+            <label for="cvv"><b>CVV:</b></label>
+            <input type="password" id="cvv" name="cvv" placeholder="123" maxlength="4" required>
+          </div>
+        </div>
+
+        <br />
+        <button type="submit" class="hero-btn green-btn" style="width: 100%; font-size: 16px;">Pay Now</button>
+
+        <p style="text-align: center; font-size: 12px; color: gray; margin-top: 10px;">
+          *This is a demo form. No real payment will be made.
+        </p>
+
+        <div style="margin-top: 20px; text-align: center;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/120px-Visa.svg.png" width="50" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Mastercard-logo.png/120px-Mastercard-logo.png" width="50" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/120px-PayPal.svg.png" width="50" />
+        </div>
+      </form>
+    </div>
+
+    <div class="contact-col" style="flex: 1; text-align: center;">
+      <img src="images/payment.png" alt="Payment Preview" style="width: 90%; max-width: 400px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);" />
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    <nav>
+      <a href="index.html"><img src="images/logo.png" /></a>
+      <div class="nav-linkss" id="navLinks">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="aboutus.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="row-footer">
+      <div class="col-footer"></div>
+      <div class="col-footer"></div>
+      <div class="col-footer">
+        <div class="testers">
+          <i class="fa fa-envelope-o"></i>
+          <span>
+            <p id="no4">support@elobot.com</p>
+          </span>
+        </div>
+      </div>
+      <div class="col-footer">
+        <div>
+          <i class="fa fa-home"></i>
+          <span>
+            <p id="no4">Sydney, Australia</p>
+          </span>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <p class="copyright">
+      &copy; 2025 Elo Bot. All rights reserved.
+    </p>
+  </footer>
+
+  <script>
+    var navLinks = document.getElementById("navLinks");
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+    function hideMenu() {
+      navLinks.style.right = "-200px";
+    }
+  </script>
+</body>
+</html>

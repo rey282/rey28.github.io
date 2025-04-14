@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0" />
+    <title>Elo Bot</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      @keyframes appear {
+        from {
+          opacity: 0;
+          scale: 0.5;
+        }
+        to {
+          opacity: 1;
+          scale: 1;
+        }
+      }
+      .effect {
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="header">
+      <nav>
+        <a href="index.html"><img src="images/logo.png" /></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+
+      <div class="row">
+        <div class="index">
+          <h1 id="no1"><b>Our Services</b></h1>
+          <h1 style="padding-top: 20px" id="no2">
+            Competitive tools for Discord communities
+          </h1>
+          <br />
+          <p style="padding-bottom: 20px" id="no4">
+            Elo Bot is a powerful all-in-one solution for Discord servers that
+            host PvP games and events. We help admins manage rankings,
+            automate roles, track match history, and keep the server under
+            control — all through easy slash commands.
+          </p>
+          <a href="#text" class="hero-btn green-btn">See Features</a>
+        </div>
+        <div class="index">
+          <img src="images/submits.png" class="effect" id="imgservices" style="width: 800px; height: 500px"/>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="about-us" id="text">
+      <div class="row3">
+        <div class="about-col11">
+          <img src="images/submit.png" class="effect" style="width: 400px; height: 500px"/>
+        </div>
+        <div class="about-col11">
+          <h1 id="no2" style="display: flex;">
+            <img src="images/icons/elo.png" style="width: 80px; height: 80px" />
+            <span style="line-height: 2; margin-left: 10px;">ELO Ranking System</span>
+          </h1>
+          <p id="no4">
+            Elo Bot tracks each player's performance using an ELO system — just like in chess or competitive games.
+            Rankings go up or down depending on match results, giving players motivation to improve and climb the board.
+          </p>
+          <br />
+          <p id="no4"><b>Custom formulas:</b> Tailored for your server’s format</p>
+          <p id="no4"><b>Real-time updates:</b> Rankings change as soon as results are submitted</p>
+        </div>
+      </div>
+
+      <div class="row2">
+        <div class="about-col1111">
+          <h1 id="col1111">
+            <img src="images/icons/leaderboard.png" style="width: 80px; height: 80px" />
+            <span style="line-height: 2; margin-left: 10px;">Live Leaderboard</span>
+          </h1>
+          <p id="no4">
+            Players can see rankings anytime using a command. The leaderboard is posted as a Discord embed and is always up to date.
+          </p>
+          <br />
+          <h1 style="padding-top: 80px ;display: flex;" id="no2">
+            <img src="images/icons/moderation.png" style="width: 80px; height: 80px" />
+            <span style="line-height: 2; margin-left: 10px;">Moderation Tools</span>
+          </h1>
+          <p id="no4">Mute, kick, or ban users directly through the bot. Elo Bot helps admins keep control while managing games fairly and efficiently.</p>
+        </div>
+        <div class="about-col1111">
+          <img src="images/leaderboards.png" class="effect" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="about-col21">
+          <img src="images/matchhistory.png" class="effect" />
+        </div>
+        <div class="about-col21">
+          <h1 id="col11111">
+            <img src="images/icons/history.png" style="width: 80px; height: 80px" />
+            <span style="line-height: 2; margin-left: 10px;">Match History</span>
+          </h1>
+          <p id="no4">
+            Elo Bot saves every match result, so server staff can review past games or fix mistakes. Each entry includes the players, scores, and ELO changes.
+          </p>
+          <h1 style="padding-top: 80px; display: flex" id="no2">
+            <img src="images/icons/roles.png" style="width: 80px; height: 80px" />
+            <span style="line-height: 2; margin-left: 10px;">Auto Role Assignment</span>
+          </h1>
+          <p style="padding-bottom: 120px">
+            When players reach certain ELO milestones, they can automatically be given a Discord role — perfect for champion ranks, top 10 badges, and more.
+          </p>
+        </div>
+      </div>
+
+      <div class="row2" style="background-color: #000c66">
+        <div class="about-col31">
+          <h1 id="col11111">
+            <img src="images/icons/setup.png" style="width: 80px; height: 80px" />
+            <span style="line-height: 2; margin-left: 10px;">Easy Setup</span>
+          </h1>
+          <p id="no4">
+            Elo Bot uses slash commands, setup helpers, and built-in tips to make onboarding super fast — no coding needed.
+          </p>
+          <h1 style="padding-top: 80px; display: flex" id="no2">
+            <img src="images/icons/support.png" style="width: 80px; height: 80px" />
+            <span style="line-height: 2; margin-left: 10px;">Friendly Support</span>
+          </h1>
+          <p id="no4">
+            Join our support server or reach out by email if you need help. We’re here to assist with setup, bugs, or custom features.
+          </p>
+        </div>
+        <div class="about-col31">
+          <img src="images/submitt.png" class="effect" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-us">
+      <div class="row-contactus">
+        <div class="contact-col">
+          <h1 id="no1">Contact Us</h1>
+          <p id="no4">
+            Have questions? Want to try Elo Bot on your server? Get in touch below!
+          </p>
+        </div>
+        <div class="contact-col">
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="34aeab2d-72f3-4868-a4b4-dd1d2843b17b" />
+            <input type="text" name="name" placeholder="Enter your name" required />
+            <input type="text" name="discord" placeholder="Discord username (optional)" />
+            <input type="email" name="email" placeholder="Enter email address" required />
+            <input type="text" name="subject" placeholder="Enter subject" required />
+            <textarea rows="8" name="message" placeholder="How can we help?"></textarea>
+            <button type="submit" class="hero-btn green-btn">Submit</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <nav>
+        <a href="index.html"><img src="images/logo.png" /></a>
+        <div class="nav-linkss">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="row-footer">
+        <div class="col-footer"></div>
+        <div class="col-footer"></div>
+        <div class="col-footer">
+          <div class="testers">
+            <i class="fa fa-envelope-o"></i>
+            <span>
+              <p id="no4">support@elobot.com</p>
+            </span>
+          </div>
+        </div>
+        <div class="col-footer">
+          <div>
+            <i class="fa fa-home"></i>
+            <span>
+              <p id="no4">Sydney, Australia</p>
+            </span>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <p class="copyright">&copy; 2025 Elo Bot. All rights reserved.</p>
+    </footer>
+
+    <script>
+      var navLinks = document.getElementById("navLinks");
+      function showMenu() {
+        navLinks.classList.add("active");
+      }
+      function hideMenu() {
+        navLinks.classList.remove("active");
+      }
+    </script>
+  </body>
+</html>
