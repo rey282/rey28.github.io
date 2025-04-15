@@ -116,14 +116,14 @@
         </div>
         <div class="about-col21">
           <h1 id="col11111">
-            <img src="images/icons/history.png" style="width: 80px; height: 80px" />
+            <img src="images/icons/history1.png" style="width: 80px; height: 80px" />
             <span style="line-height: 2; margin-left: 10px;">Match History</span>
           </h1>
           <p id="no4">
             Elo Bot saves every match result, so server staff can review past games or fix mistakes. Each entry includes the players, scores, and ELO changes.
           </p>
           <h1 style="padding-top: 80px; display: flex" id="no2">
-            <img src="images/icons/roles.png" style="width: 80px; height: 80px" />
+            <img src="images/icons/roles1.png" style="width: 80px; height: 80px" />
             <span style="line-height: 2; margin-left: 10px;">Auto Role Assignment</span>
           </h1>
           <p style="padding-bottom: 120px">
@@ -166,7 +166,7 @@
         </div>
         <div class="contact-col">
           <form action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="" />
+            <input type="hidden" name="access_key" value="cb8bb5d9-241b-4c95-9653-77da221c8013" />
             <input type="text" name="name" placeholder="Enter your name" required />
             <input type="text" name="discord" placeholder="Discord username (optional)" />
             <input type="email" name="email" placeholder="Enter email address" required />
@@ -177,6 +177,135 @@
         </div>
       </div>
     </section>
+
+    <!-- Pricing Section (Styled like Discord Nitro) -->
+<section class="about-us" style="background-color: #f5f7fb;">
+  <h1 id="no1" style="text-align: center; padding-top: 20px;">Choose Your Plan</h1>
+  <div class="row" style="display: flex; justify-content: center; gap: 40px; padding: 30px; flex-wrap: wrap; align-items: stretch;">
+
+    <!-- Basic Plan -->
+    <div style="background: linear-gradient(to right, #3b82f6, #60a5fa); color: white; padding: 25px; border-radius: 15px; width: 300px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <h2 style="margin-bottom: 10px;">BASIC</h2>
+        <p style="font-size: 20px;"><b>$5</b> / month</p>
+        <hr>
+        <ul style="list-style: none; padding: 0;">
+          <li>✔ ELO Rankings</li>
+          <li>✔ Match History</li>
+          <li>✔ Live Leaderboard</li>
+          <li>✔ Community Support</li>
+        </ul>
+      </div>
+      <button onclick="selectPlan('Basic', '$5 / month')" class="hero-btn green-btn" style="width: 100%; margin-top: 20px;">Subscribe Basic</button>
+    </div>
+
+    <!-- Pro Plan -->
+    <div style="background: linear-gradient(to right, #9333ea, #a855f7); color: white; padding: 25px; border-radius: 15px; width: 300px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <h2 style="margin-bottom: 10px;">PRO</h2>
+        <p style="font-size: 20px;"><b>$15</b> / month<br><b>$150</b> / year</p>
+        <hr>
+        <ul style="list-style: none; padding: 0;">
+          <li>✔ All Basic Features</li>
+          <li>✔ Auto Role Assignment</li>
+          <li>✔ Server Moderation</li>
+          <li>✔ Priority Support</li>
+        </ul>
+      </div>
+      <button onclick="selectPlan('Pro', '$15 / month')" class="hero-btn green-btn" style="width: 100%; margin-top: 20px;">Subscribe Pro</button>
+    </div>
+  </div>
+</section>
+
+<!-- Checkout Modal (Hidden at first) -->
+<div id="checkoutModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); justify-content: center; align-items: center; z-index: 1000;">
+  <div style="background: white; padding: 30px; width: 400px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+    <h2 id="checkoutTitle">Subscribe to Plan</h2>
+    <p>Enter your payment details:</p>
+    <form id="checkoutForm">
+      <input id="cardName" type="text" placeholder="Cardholder Name" required style="width: 100%; margin-bottom: 10px; padding: 8px;">
+      <input type="text" placeholder="Card Number" maxlength="19" required style="width: 100%; margin-bottom: 10px; padding: 8px;">
+      <input type="text" placeholder="Expiry (MM/YY)" maxlength="5" required style="width: 48%; margin-right: 4%; padding: 8px;">
+      <input type="text" placeholder="CVV" maxlength="4" required style="width: 48%; padding: 8px;">
+      <br><br>
+      <button type="submit" class="hero-btn green-btn" style="width: 100%;">Confirm Payment</button>
+    </form>
+    <button onclick="closeCheckout()" style="margin-top: 10px; background: transparent; border: none; color: #666;">Cancel</button>
+  </div>
+</div>
+
+<!-- Success Page Modal -->
+<div id="successPage" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f5f7fb; z-index: 1000; justify-content: center; align-items: center; flex-direction: column; text-align: center;" class="hidden-success">
+  <img src="images/complete.png" alt="Payment Complete" style="max-width: 120px; margin-bottom: 20px;">
+  <h2>Payment Complete</h2>
+  <p>Thank you for subscribing to Elo Bot!</p>
+  <div id="receipt" style="margin-top: 20px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: left; max-width: 400px;">
+    <h3 style="text-align: center;">Receipt</h3>
+    <p><b>Transaction ID:</b> <span id="receiptID"></span></p>
+    <p><b>Plan:</b> <span id="receiptPlan"></span></p>
+    <p><b>Price:</b> <span id="receiptPrice"></span></p>
+    <p><b>Cardholder:</b> <span id="receiptName"></span></p>
+    <p><b>Date:</b> <span id="receiptDate"></span></p>
+    <button onclick="generatePDF()" class="hero-btn green-btn" style="width: 100%; margin-top: 20px;">Download PDF</button>
+  </div>
+  <button onclick="goBack()" class="hero-btn green-btn" style="margin-top: 10px;">Return to Home</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  let selectedPlan = '';
+  let selectedPrice = '';
+
+  function selectPlan(plan, price) {
+    selectedPlan = plan;
+    selectedPrice = price;
+    const modal = document.getElementById('checkoutModal');
+    const title = document.getElementById('checkoutTitle');
+    title.textContent = `Subscribe to ${plan} Plan`;
+    modal.style.display = 'flex';
+  }
+
+  function closeCheckout() {
+    document.getElementById('checkoutModal').style.display = 'none';
+  }
+
+  function confirmCheckout(e) {
+    e.preventDefault();
+    const cardholderName = document.getElementById('cardName').value;
+    const transactionID = 'TXN-' + Math.floor(Math.random() * 1000000000);
+    const date = new Date().toLocaleString();
+
+    document.getElementById('receiptPlan').textContent = selectedPlan;
+    document.getElementById('receiptPrice').textContent = selectedPrice;
+    document.getElementById('receiptName').textContent = cardholderName;
+    document.getElementById('receiptDate').textContent = date;
+    document.getElementById('receiptID').textContent = transactionID;
+
+    document.getElementById('checkoutModal').style.display = 'none';
+    document.getElementById('successPage').style.display = 'flex';
+  }
+
+  function goBack() {
+    document.getElementById('successPage').style.display = 'none';
+  }
+
+  function generatePDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    doc.setFontSize(16);
+    doc.text('Elo Bot - Payment Receipt', 20, 20);
+    doc.setFontSize(12);
+    doc.text('Transaction ID: ' + document.getElementById('receiptID').textContent, 20, 40);
+    doc.text('Plan: ' + document.getElementById('receiptPlan').textContent, 20, 50);
+    doc.text('Price: ' + document.getElementById('receiptPrice').textContent, 20, 60);
+    doc.text('Cardholder: ' + document.getElementById('receiptName').textContent, 20, 70);
+    doc.text('Date: ' + document.getElementById('receiptDate').textContent, 20, 80);
+    doc.save('elo_bot_receipt.pdf');
+  }
+
+  document.getElementById("checkoutForm").addEventListener("submit", confirmCheckout);
+</script>
+
 
     <!-- Footer -->
     <footer>
